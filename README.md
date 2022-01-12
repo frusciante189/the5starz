@@ -4,3 +4,4 @@
 - Hero picture
 - Problem picture
 - FAQ slider
+- Fix Footer

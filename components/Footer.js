@@ -4,11 +4,11 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="lg:px-[70px] sm:px-12 px-5 bg-[#191919] flex justify-between items-center text-white py-3">
-      <div className="w-1/4">
+    <footer className="lg:px-[70px] sm:px-12 px-5 bg-[#191919] flex sm:flex-row flex-col justify-between items-center text-white py-3 space-y-4 sm:space-y-0">
+      <div className="sm:w-1/4 w-full text-center sm:text-left">
         <p>Copyright © 2021 The5starz. All Rights Reserved.</p>
       </div>
-      <div className="flex justify-end items-center space-x-32 w-3/4">
+      <div className="flex sm:flex-row flex-col justify-end items-center sm:space-x-32 sm:w-3/4 w-full space-y-4 sm:space-y-0">
         <div className="flex divide-x">
           <Link href="/">
             <a className="px-5 py-3 text-sm">Join our community</a>
