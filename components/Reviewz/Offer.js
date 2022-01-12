@@ -17,7 +17,7 @@ const Offer = () => {
           </button>
         </div>
       </div>
-      <div className="outline outline-4 max-w-max outline-white absolute md:-top-32 -top-40 -translate-x-1/2 sm:right-[12%] left-1/2 rounded">
+      <div className="outline outline-4 max-w-max outline-white absolute md:-top-32 -top-40 -translate-x-1/2 sm:right-[11%] left-1/2 rounded">
         <Image
           src={img}
           width={300}
