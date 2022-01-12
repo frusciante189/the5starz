@@ -10,6 +10,7 @@ module.exports = {
       },
       backgroundImage: {
         banner: "url('../public/Assets/banner.jpg')",
+        bg4: "url('../public/Assets/bg4.png')",
       },
     },
   },

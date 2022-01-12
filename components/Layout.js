@@ -1,4 +1,4 @@
-import React from "react";
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 import PageHead from "./PageHead";
 
@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
       <PageHead />
       <Navbar />
       <main className="antialiased">{children}</main>
+      <Footer />
     </>
   );
 };

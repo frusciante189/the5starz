@@ -1,4 +1,6 @@
+import Authenticity from "../components/Home/Authenticity";
 import Client from "../components/Home/Client";
+import Form from "../components/Home/Form";
 import Hero from "../components/Home/Hero";
 import Inspired from "../components/Home/Inspired";
 import ProblemSolution from "../components/Home/ProblemSolution";
@@ -12,6 +14,8 @@ export default function Home() {
       <Client />
       <Inspired />
       <Testimonial />
+      {/* <Authenticity /> */}
+      <Form />
     </>
   );
 }
