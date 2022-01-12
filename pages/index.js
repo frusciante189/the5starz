@@ -14,7 +14,7 @@ export default function Home() {
       <Client />
       <Inspired />
       <Testimonial />
-      {/* <Authenticity /> */}
+      <Authenticity />
       <Form />
     </>
   );

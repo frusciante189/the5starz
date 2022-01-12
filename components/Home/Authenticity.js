@@ -1,29 +1,25 @@
+import Image from "next/image";
 import React from "react";
+import AuthCard from "./AuthCard";
+import data from "./AuthData";
 
 const Authenticity = () => {
   return (
-    <div className="bg-bg4 w-full bg-cover bg-no-repeat sm:py-7 md:py-10 lg:py-12 xl:py-16 py-5">
-      <div className="max-w-5xl mx-auto flex items-center flex-col">
+    <section className="bg-bg4 w-full bg-no-repeat bg-cover sm:py-7 md:py-10 lg:py-12 xl:py-16 py-5 bg-[#F2F1F0]">
+      <div className="max-w-6xl mx-auto flex items-center flex-col lg:px-[70px] sm:px-12 px-5">
         <h1 className="font-bold text-[42px] leading-[42px]">
           Authenticity pays off
         </h1>
         <div className="bg-black h-1.5 w-1/6 lg:w-[7%] rounded-full lg:mt-5 mt-3"></div>
-        <div className="grid grid-cols-3">
-          <div className="bg-white flex flex-col h-full">
-            <div className="w-full h-2/5">
-              <h1>50%</h1>
-            </div>
-            <div className="h-3/5">
-              <h1>Click through rates</h1>
-              <p>
-                Ads based on UGC receive 4 times higher click-through rates and
-                a 50% drop in cost-per-click compared to average ads.{" "}
-              </p>
-            </div>
-          </div>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mt-10">
+          {data.map((item) => {
+            return (
+              <AuthCard perc={item.perc} title={item.title} desc={item.desc} />
+            );
+          })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

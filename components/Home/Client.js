@@ -3,7 +3,6 @@ import { PlusCircleIcon } from "@heroicons/react/outline";
 import { Disclosure, Transition } from "@headlessui/react";
 import Image from "next/image";
 import Banner from "../../public/Assets/girl.png";
-import Slider from "react-slick";
 
 const Client = () => {
   return (
@@ -35,7 +34,7 @@ const Client = () => {
                     enter="transition duration-500 ease-out"
                     enterFrom="transform scale-95 opacity-100"
                     enterTo="transform scale-100 opacity-100"
-                    leave="transition duration-500 ease-out"
+                    leave="transition duration-200 ease-out"
                     leaveFrom="transform scale-100 opacity-100"
                     leaveTo="transform scale-95 opacity-0"
                   >
@@ -59,7 +58,7 @@ const Client = () => {
                     enter="transition duration-500 ease-out"
                     enterFrom="transform scale-95 opacity-100"
                     enterTo="transform scale-100 opacity-100"
-                    leave="transition duration-500 ease-out"
+                    leave="transition duration-200 ease-out"
                     leaveFrom="transform scale-100 opacity-100"
                     leaveTo="transform scale-95 opacity-0"
                   >
@@ -83,7 +82,7 @@ const Client = () => {
                     enter="transition duration-500 ease-out"
                     enterFrom="transform scale-95 opacity-100"
                     enterTo="transform scale-100 opacity-100"
-                    leave="transition duration-500 ease-out"
+                    leave="transition duration-200 ease-out"
                     leaveFrom="transform scale-100 opacity-100"
                     leaveTo="transform scale-95 opacity-0"
                   >
@@ -107,7 +106,7 @@ const Client = () => {
                     enter="transition duration-500 ease-out"
                     enterFrom="transform scale-95 opacity-100"
                     enterTo="transform scale-100 opacity-100"
-                    leave="transition duration-500 ease-out"
+                    leave="transition duration-200 ease-out"
                     leaveFrom="transform scale-100 opacity-100"
                     leaveTo="transform scale-95 opacity-0"
                   >

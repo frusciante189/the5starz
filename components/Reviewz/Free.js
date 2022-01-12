@@ -23,9 +23,9 @@ const Free = () => {
         <p className="mt-5 text-lg text-white text-center font-medium">
           How does it work?
         </p>
-        <div className="grid grid-cols-4 mt-5 gap-x-2.5">
+        <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 mt-5 gap-x-2.5 gap-y-6">
           <div className="flex flex-col items-center">
-            <div>
+            <div className="min-h-[111px]">
               <Image src={truck} />
             </div>
             <div>
@@ -35,8 +35,8 @@ const Free = () => {
             </div>
           </div>
           <div className="flex flex-col items-center justify-start">
-            <div className="w-[185px] h-auto flex items-center justify-center">
-              <Image src={favourite} />
+            <div className="min-h-[111px] mb-6">
+              <Image src={favourite} width={90} height={90} />
             </div>
             <div>
               <p className="font-extrabold text-white text-[22px] leading-[22px] text-center">
@@ -45,8 +45,8 @@ const Free = () => {
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <div>
-              <Image src={phone} />
+            <div className="min-h-[111px] mb-6">
+              <Image src={phone} width={111} height={111} />
             </div>
             <div>
               <p className="font-extrabold text-white text-[22px] leading-[22px] text-center">
@@ -54,9 +54,9 @@ const Free = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col items-center">
-            <div>
-              <Image src={giftbox} />
+          <div className="flex flex-col items-center min-h-[111px]">
+            <div className="min-h-[111px] mb-6">
+              <Image src={giftbox} width={100} height={100} />
             </div>
             <div>
               <p className="font-extrabold text-white text-[22px] leading-[22px] text-center">

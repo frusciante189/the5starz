@@ -1,6 +1,8 @@
 import React from "react";
 import Hero from "../components/Community/Hero";
+import Banner from "../components/Reviewz/Banner";
 import Free from "../components/Reviewz/Free";
+import LastSection from "../components/Reviewz/LastSection";
 import Offer from "../components/Reviewz/Offer";
 import Product from "../components/Reviewz/Product";
 
@@ -11,6 +13,8 @@ const Reviewz = () => {
       <Product />
       <Offer />
       <Free />
+      <Banner />
+      <LastSection />
     </>
   );
 };

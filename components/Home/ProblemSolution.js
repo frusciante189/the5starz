@@ -1,8 +1,8 @@
 const ProblemSolution = () => {
   return (
-    <section className="bg-primaryRed">
+    <section className="bg-primaryRed ">
       <div className="grid lg:grid-cols-2 grid-cols-1">
-        <div className="lg:px-[70px] sm:px-12 px-5 lg:py-24 md:py-14 sm:py-10 py-12 bg-white">
+        <div className="lg:px-[70px] sm:px-12 px-5 lg:py-24 md:py-14 sm:py-10 py-12 bg-white bg-bg1 bg-cover bg-bottom">
           <h1 className="xl:text-[34px] xl:leading-[34px] lg:text-[28px] lg:leading-[28px] text-2xl leading-[24px] font-bold text-primaryRed">
             The problem
           </h1>

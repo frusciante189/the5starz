@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import Tes1 from "../../public/Assets/tes1.jpg";
 import Tes2 from "../../public/Assets/tes2.jpg";
+import q1 from "../../public/Assets/q1.png";
+import q2 from "../../public/Assets/q2.png";
 import Slider from "react-slick";
 
 const Testimonial = () => {
@@ -13,7 +15,7 @@ const Testimonial = () => {
     slidesToScroll: 1,
   };
   return (
-    <section>
+    <section className="bg-bg3 bg-left-bottom bg-no-repeat relative overflow-hidden">
       <div className="sm:py-7 md:py-10 lg:py-12 xl:py-16 py-5 flex flex-col items-center">
         <h1 className="text-[28px] leading-[28px] lg:text-[34px] lg:leading-[34px] xl:text-[42px] xl:leading-[42px] text-primaryRed text-center font-bold">
           Our clients love us
@@ -40,6 +42,12 @@ const Testimonial = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="absolute md:-top-4 top-0 md:left-12 sm:left-5 left-2 lg:w-64 lg:h-36 md:w-32 md:h-16 w-16 h-8">
+        <Image src={q1} layout="fill" objectFit="cover" />
+      </div>
+      <div className="absolute md:-bottom-4 bottom-0 md:right-12 sm:right-5 right-2 lg:w-64 lg:h-36 md:w-32 md:h-16 w-16 h-8">
+        <Image src={q2} layout="fill" objectFit="cover" />
       </div>
     </section>
   );
