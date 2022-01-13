@@ -7,7 +7,7 @@ const ProblemSolution = () => {
             The problem
           </h1>
           <div className="bg-primaryRed h-1.5 lg:min-w-[11%] w-1/6 rounded-full mt-5"></div>
-          <p className="mt-7 text-lg leading-[30px] pr-14">
+          <p className="mt-7 text-lg leading-[30px] lg:pr-14">
             With all due respect to influencers (yes, even nano influencers)
             what really converts is – you guessed it, ordinary people.{" "}
             <span className="font-bold">People who are just like you!</span>{" "}

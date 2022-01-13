@@ -12,9 +12,14 @@ const Authenticity = () => {
         </h1>
         <div className="bg-black h-1.5 w-1/6 lg:w-[7%] rounded-full lg:mt-5 mt-3"></div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mt-10">
-          {data.map((item) => {
+          {data.map((item, index) => {
             return (
-              <AuthCard perc={item.perc} title={item.title} desc={item.desc} />
+              <AuthCard
+                perc={item.perc}
+                title={item.title}
+                desc={item.desc}
+                key={index}
+              />
             );
           })}
         </div>

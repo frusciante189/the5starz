@@ -96,7 +96,7 @@ const Form = () => {
                 *
               </span>
             </h1>
-            <div className="grid grid-cols-3 sm:gap-x-5  gap-y-4 sm:gap-y-0 w-1/2">
+            <div className="grid grid-cols-3 sm:gap-x-5 gap-x-4 gap-y-4 sm:gap-y-0 lg:w-1/2 md:w-2/3 w-3/4">
               <Input placeholder="DD" />
               <Input placeholder="MM" />
               <Input placeholder="YYYY" />

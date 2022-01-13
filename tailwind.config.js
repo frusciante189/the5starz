@@ -13,6 +13,7 @@ module.exports = {
         bg4: "url('../public/Assets/bg4.png')",
         bg1: "url('../public/Assets/bg.png')",
         bg3: "url('../public/Assets/bg3.png')",
+        bg5: "url('../public/Assets/bg5.png')",
         banner2: "url('../public/Assets/banner.png')",
       },
     },
