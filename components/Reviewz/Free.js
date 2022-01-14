@@ -16,8 +16,8 @@ const Free = () => {
           <path d="M350,10L340,0h20L350,10z"></path>
         </svg>
       </div>
-      <div className="max-w-5xl mx-auto pt-16 pb-12">
-        <h1 className="text-white font-black text-[39px] leading-[63px] text-center">
+      <div className="max-w-5xl mx-auto pt-16 pb-12 px-2">
+        <h1 className="text-white font-black md:text-[39px] md:leading-[63px] text-2xl text-center">
           Free products from your favorite brands
         </h1>
         <p className="mt-5 text-lg text-white text-center font-medium">

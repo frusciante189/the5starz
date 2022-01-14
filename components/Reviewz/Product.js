@@ -6,7 +6,7 @@ import p3 from "../../public/Assets/product3.jpg";
 const Product = () => {
   return (
     <section className="bg-[#F0F0F0]">
-      <div className="md:py-16 pt-16 lg:px-2 md:px-10 px-5 pb-40 max-w-5xl mx-auto">
+      <div className="md:py-16 sm:pt-16 pt-10 lg:px-2 md:px-10 px-5 pb-20 max-w-5xl mx-auto">
         <h1 className="font-black text-[39px] leading-[39px] text-center">
           The place to be heard
         </h1>

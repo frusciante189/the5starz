@@ -5,3 +5,10 @@
 html {
   font-family: "Raleway", sans-serif;
 }
+
+input:checked + div {
+  @apply bg-red-200 border-none;
+}
+input:checked + div svg {
+  @apply block;
+}

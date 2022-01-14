@@ -3,7 +3,7 @@ import Logo from "../public/Assets/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="absolute inset-x-0 top-0">
+    <nav className="absolute inset-x-0 top-0 z-10">
       <div className="flex justify-between items-center lg:px-[70px] sm:px-12 px-2 py-5">
         <a href="/">
           <Image
