@@ -26,9 +26,11 @@ const ClientSlider = () => {
     speed: 500,
     rows: 4,
     slidesPerRow: 1,
+    autoplaySpeed: 3000,
+    autoplay: true,
   };
   return (
-    <div className="bg-[#E88A8A] px-[30px] py-[60px] lg:-mt-52 z-10 max-w-xl w-full">
+    <div className="bg-[#E88A8A] px-[30px] py-[60px] lg:-mt-52 z-10 max-w-xl w-full max-h-full">
       <h1 className="font-bold text-5xl mb-8">Our Clients</h1>
       <div className="grayscale">
         <Slider {...settings}>

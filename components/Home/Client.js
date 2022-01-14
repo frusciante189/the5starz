@@ -29,7 +29,7 @@ const Client = () => {
       </div>
       <div className="lg:px-[70px] sm:px-12 p-5 sm:py-7 md:py-10 lg:py-12 xl:py-16">
         <div className="flex lg:flex-row flex-col lg:space-x-10 space-y-10 lg:space-y-0">
-          <div className="lg:w-1/2 w-full">
+          <div className="lg:w-1/2 w-full max-h-max">
             <h1 className="text-primaryRed font-bold text-[28px] leading-[28px] lg:text-[34px] lg:leading-[34px] xl:text-[42px] xl:leading-[42px] ">
               Why the5starz?
             </h1>

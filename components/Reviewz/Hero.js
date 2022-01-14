@@ -1,4 +1,5 @@
-import React from "react";
+import Image from "next/image";
+import slp from "../../public/Assets/slp.png";
 
 const Hero = () => {
   return (
@@ -17,6 +18,9 @@ const Hero = () => {
               Rush me a FREE product
             </button>
           </div>
+        </div>
+        <div className="absolute top-32 right-20 hidden lg:block">
+          <Image src={slp} width={500} height={500} />
         </div>
       </div>
     </section>
