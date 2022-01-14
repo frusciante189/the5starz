@@ -142,6 +142,9 @@ const SecondForm = () => {
               <span>5</span>
             </label>
           </div>
+          <p className="mt-2 text-sm">
+            *1 being not important, and 5 Extremely important
+          </p>
         </div>
         <div className="">
           <h1 className="font-bold mb-4">How important is nature to you?</h1>
@@ -167,6 +170,9 @@ const SecondForm = () => {
               <span>5</span>
             </label>
           </div>
+          <p className="mt-2 text-sm">
+            *1 being not important, and 5 Extremely important
+          </p>
         </div>
       </div>
     </div>
