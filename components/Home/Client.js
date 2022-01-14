@@ -19,25 +19,16 @@ import tlip from "../../public/Assets/tlip.jpg";
 import mayven from "../../public/Assets/mayven.png";
 import seboCalm from "../../public/Assets/seboCalm.jpg";
 import roi from "../../public/Assets/roi-ben.jpg";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import ClientSlider from "./ClientSlider";
 
 const Client = () => {
-  const settings = {
-    infinite: true,
-    slidesToShow: 3,
-    speed: 500,
-    rows: 4,
-    slidesPerRow: 1,
-  };
   return (
     <section className="relative">
       <div>
         <Image src={Banner} className="-scale-x-100" alt="the5starzz" />
       </div>
       <div className="lg:px-[70px] sm:px-12 p-5 sm:py-7 md:py-10 lg:py-12 xl:py-16">
-        <div className="flex lg:flex-row flex-col space-x-10">
+        <div className="flex lg:flex-row flex-col lg:space-x-10 space-y-10 lg:space-y-0">
           <div className="lg:w-1/2 w-full">
             <h1 className="text-primaryRed font-bold text-[28px] leading-[28px] lg:text-[34px] lg:leading-[34px] xl:text-[42px] xl:leading-[42px] ">
               Why the5starz?
@@ -148,54 +139,7 @@ const Client = () => {
               </Disclosure>
             </div>
           </div>
-          {/* <div className="bg-[#E88A8A] px-[30px] py-[60px] -mt-52 z-10 max-w-xl w-full">
-            <h1>Our Clients</h1>
-            <div className="">
-              <Slider {...settings}>
-                <Image src={nanuka} objectFit="cover" width={182} height={93} />
-                <Image src={maelys} objectFit="cover" width={182} height={93} />
-                <Image
-                  src={tenesse}
-                  objectFit="cover"
-                  width={182}
-                  height={93}
-                />
-                <Image
-                  src={smashbox}
-                  objectFit="cover"
-                  width={182}
-                  height={93}
-                />
-                <Image src={amkiri} objectFit="cover" width={182} height={93} />
-                <Image
-                  src={cannabotech}
-                  objectFit="cover"
-                  width={182}
-                  height={93}
-                />
-                <Image src={noa} objectFit="cover" width={182} height={93} />
-                <Image src={urb} objectFit="cover" width={182} height={93} />
-                <Image src={beards} objectFit="cover" width={182} height={93} />
-                <Image src={seeds} objectFit="cover" width={182} height={93} />
-                <Image
-                  src={clinique}
-                  objectFit="cover"
-                  width={182}
-                  height={93}
-                />
-                <Image src={dafni} objectFit="cover" width={182} height={93} />
-                <Image src={tlip} objectFit="cover" width={182} height={93} />
-                <Image src={mayven} objectFit="cover" width={182} height={93} />
-                <Image
-                  src={seboCalm}
-                  objectFit="cover"
-                  width={182}
-                  height={93}
-                />
-                <Image src={roi} objectFit="cover" width={182} height={93} />
-              </Slider>
-            </div>
-          </div> */}
+          <ClientSlider />
         </div>
       </div>
     </section>
