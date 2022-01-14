@@ -12,3 +12,7 @@ input:checked + div {
 input:checked + div svg {
   @apply block;
 }
+
+.bg-custom {
+  background-position: 80% 0px;
+}
