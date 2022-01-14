@@ -16,9 +16,27 @@ const Product = () => {
           exchange for honest reviews and content.
         </p>
         <div className="grid md:grid-cols-3 grid-cols-1 gap-x-5 mt-[30px] md:gap-y-0 gap-y-5">
-          <Image src={p1} width="253px" height="253px" objectFit="cover" />
-          <Image src={p2} width="253px" height="253px" objectFit="cover" />
-          <Image src={p3} width="253px" height="253px" objectFit="cover" />
+          <Image
+            src={p1}
+            width="253px"
+            height="253px"
+            objectFit="cover"
+            alt="the5starzz"
+          />
+          <Image
+            src={p2}
+            width="253px"
+            height="253px"
+            objectFit="cover"
+            alt="the5starzz"
+          />
+          <Image
+            src={p3}
+            width="253px"
+            height="253px"
+            objectFit="cover"
+            alt="the5starzz"
+          />
         </div>
         <div className="py-12 text-center">
           <button className="bg-primaryRed text-white p-[14px] rounded-lg">

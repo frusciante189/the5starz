@@ -26,7 +26,13 @@ const Offer = () => {
         </div>
         <div className="flex items-center justify-center">
           <div className="outline outline-4 max-w-max outline-white rounded md:-mt-40 -mt-20">
-            <Image src={img} width={300} height={500} objectFit="cover" />
+            <Image
+              src={img}
+              width={300}
+              height={500}
+              objectFit="cover"
+              alt="the5starzz"
+            />
           </div>
         </div>
       </div>

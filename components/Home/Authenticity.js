@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import AuthCard from "./AuthCard";
 import data from "./AuthData";

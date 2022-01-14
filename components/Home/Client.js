@@ -34,7 +34,7 @@ const Client = () => {
   return (
     <section className="relative">
       <div>
-        <Image src={Banner} className="-scale-x-100" />
+        <Image src={Banner} className="-scale-x-100" alt="the5starzz" />
       </div>
       <div className="lg:px-[70px] sm:px-12 p-5 sm:py-7 md:py-10 lg:py-12 xl:py-16">
         <div className="flex lg:flex-row flex-col space-x-10">
