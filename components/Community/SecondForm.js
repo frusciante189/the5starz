@@ -12,7 +12,7 @@ const SecondForm = () => {
           </div>
         </div>
         <div className="">
-          <h1 className="font-bold mb-4">I love to create video's of myself</h1>
+          <h1 className="font-bold mb-4">I love to create videos of myself</h1>
           <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
             <SelectInput>
               <option value="yes">Yes</option>

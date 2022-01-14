@@ -15,7 +15,7 @@ const Navbar = () => {
         />
         <div>
           <button className="bg-primaryRed text-white lg:py-3 lg:px-5 sm: py-2 px-3 uppercase text-sm font-semibold">
-            Let's Talk
+            Lets Talk
           </button>
         </div>
       </div>
