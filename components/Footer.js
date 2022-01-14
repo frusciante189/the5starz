@@ -4,12 +4,12 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="lg:px-[70px] sm:px-12 px-5 bg-[#191919] flex sm:flex-row flex-col justify-between items-center text-white py-3 space-y-4 sm:space-y-0">
-      <div className="sm:w-1/4 w-full text-center sm:text-left">
+    <footer className="lg:px-[70px] sm:px-12 px-5 bg-[#191919] flex lg:flex-row flex-col justify-between items-center text-white py-3 space-y-4 sm:space-y-0">
+      <div className="lg:w-1/4 w-full text-center lg:text-left py-4 lg:pt-0">
         <p>Copyright © 2021 The5starz. All Rights Reserved.</p>
       </div>
-      <div className="flex sm:flex-row flex-col justify-end items-center sm:space-x-32 sm:w-3/4 w-full space-y-4 sm:space-y-0">
-        <div className="flex divide-x">
+      <div className="flex lg:flex-row flex-col justify-end items-center lg:space-x-32 lg:w-3/4 w-full space-y-4 lg:space-y-2 pb-4">
+        <div className="flex">
           <Link href="/reviewz">
             <a className="px-5 py-3 text-sm">Join our community</a>
           </Link>

@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
       <PageHead />
       <Navbar />
       <main className="antialiased">{children}</main>
+      <Footer />
     </>
   );
 };
