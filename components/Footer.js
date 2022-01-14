@@ -9,7 +9,7 @@ const Footer = () => {
         <p>Copyright © 2021 The5starz. All Rights Reserved.</p>
       </div>
       <div className="flex lg:flex-row flex-col justify-end items-center lg:space-x-32 lg:w-3/4 w-full space-y-4 lg:space-y-2 pb-4">
-        <div className="flex">
+        <div className="md:flex-row flex flex-col md:text-left text-center">
           <Link href="/reviewz">
             <a className="px-5 py-3 text-sm">Join our community</a>
           </Link>
