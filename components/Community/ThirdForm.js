@@ -2,7 +2,7 @@ import React from "react";
 
 const ThirdForm = () => {
   return (
-    <div className="mt-[50px] pb-[60px] border-b">
+    <div className="lg:mt-[50px] md:mt-10 mt-5 pb-[60px] border-b">
       <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0">
         <div className="">
           <h1 className="font-bold mb-4">

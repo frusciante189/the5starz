@@ -3,7 +3,7 @@ import SelectInput from "./SelectInput";
 
 const FirstForm = () => {
   return (
-    <div className="mt-[50px] pb-[60px] border-b">
+    <div className="lg:mt-[50px] md:mt-10 mt-5 pb-[60px] border-b">
       <div>
         <h1 className="font-bold mb-4">
           Name{" "}
