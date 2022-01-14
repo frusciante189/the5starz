@@ -120,19 +120,51 @@ const SecondForm = () => {
           <h1 className="font-bold mb-4">
             How important is eating healthy to you?
           </h1>
-          <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
-            <label htmlFor="" className="flex items-center space-x-2">
+          <div className="flex space-x-5 flex-wrap">
+            <label htmlFor="" className="flex items-center space-x-2 text-lg">
               <input type="radio" />
               <span>1</span>
+            </label>
+            <label htmlFor="" className="flex items-center space-x-2 text-lg">
+              <input type="radio" />
+              <span>2</span>
+            </label>
+            <label htmlFor="" className="flex items-center space-x-2 text-lg">
+              <input type="radio" />
+              <span>3</span>
+            </label>
+            <label htmlFor="" className="flex items-center space-x-2 text-lg">
+              <input type="radio" />
+              <span>4</span>
+            </label>
+            <label htmlFor="" className="flex items-center space-x-2 text-lg">
+              <input type="radio" />
+              <span>5</span>
             </label>
           </div>
         </div>
         <div className="">
           <h1 className="font-bold mb-4">How important is nature to you?</h1>
-          <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
-            <label htmlFor="" className="flex items-center space-x-2">
-              <input type="radio" />
+          <div className="flex space-x-5 flex-wrap">
+            <label htmlFor="" className="flex items-center space-x-2 text-lg">
+              <input type="checkbox" />
               <span>1</span>
+            </label>
+            <label htmlFor="" className="flex items-center space-x-2 text-lg">
+              <input type="checkbox" />
+              <span>2</span>
+            </label>
+            <label htmlFor="" className="flex items-center space-x-2 text-lg">
+              <input type="checkbox" />
+              <span>3</span>
+            </label>
+            <label htmlFor="" className="flex items-center space-x-2 text-lg">
+              <input type="checkbox" />
+              <span>4</span>
+            </label>
+            <label htmlFor="" className="flex items-center space-x-2 text-lg">
+              <input type="checkbox" />
+              <span>5</span>
             </label>
           </div>
         </div>

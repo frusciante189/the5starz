@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FirstForm from "./FirstForm";
 import SecondForm from "./SecondForm";
+import ThirdForm from "./ThirdForm";
 
 const Form = () => {
   const [index, setIndex] = useState(0);
@@ -44,6 +45,7 @@ const Form = () => {
       </div>
       {index === 0 && <FirstForm />}
       {index === 1 && <SecondForm />}
+      {index === 2 && <ThirdForm />}
       <div className="mt-4 flex space-x-4">
         {index >= 1 && (
           <button
@@ -57,7 +59,7 @@ const Form = () => {
           className="bg-primaryRed text-white px-[30px] py-4 font-bold text-lg"
           onClick={() => setIndex((oldState) => oldState + 1)}
         >
-          NEXT
+          {index === 2 ? <span>Submit</span> : <span>Next</span>}
         </button>
       </div>
     </section>
