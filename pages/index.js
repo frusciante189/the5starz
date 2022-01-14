@@ -12,7 +12,6 @@ export default function Home() {
       <Hero />
       <ProblemSolution />
       <Client />
-      <Inspired />
       <Testimonial />
       <Authenticity />
       <Form />
