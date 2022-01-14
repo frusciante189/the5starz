@@ -1,4 +1,3 @@
-import Checkbox from "./Checkbox";
 import Input from "./Input";
 import SelectInput from "./SelectInput";
 
