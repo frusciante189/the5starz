@@ -3,22 +3,6 @@ import { PlusCircleIcon } from "@heroicons/react/outline";
 import { Disclosure, Transition } from "@headlessui/react";
 import Image from "next/image";
 import Banner from "../../public/Assets/girl.png";
-import nanuka from "../../public/Assets/nanuka.jpg";
-import maelys from "../../public/Assets/maelys.jpg";
-import tenesse from "../../public/Assets/tenesse.jpg";
-import smashbox from "../../public/Assets/smashbox.jpg";
-import amkiri from "../../public/Assets/amkiri.png";
-import cannabotech from "../../public/Assets/cannabotech.jpg";
-import noa from "../../public/Assets/noa.jpg";
-import urb from "../../public/Assets/nanuka.jpg";
-import beards from "../../public/Assets/beards.jpg";
-import seeds from "../../public/Assets/seeds.png";
-import clinique from "../../public/Assets/clinique.jpg";
-import dafni from "../../public/Assets/dafni.jpg";
-import tlip from "../../public/Assets/tlip.jpg";
-import mayven from "../../public/Assets/mayven.png";
-import seboCalm from "../../public/Assets/seboCalm.jpg";
-import roi from "../../public/Assets/roi-ben.jpg";
 import ClientSlider from "./ClientSlider";
 
 const Client = () => {

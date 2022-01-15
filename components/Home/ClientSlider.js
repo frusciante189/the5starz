@@ -1,23 +1,6 @@
-import nanuka from "../../public/Assets/nanuka.jpg";
-import maelys from "../../public/Assets/maelys.jpg";
-import tenesse from "../../public/Assets/tenesse.jpg";
-import smashbox from "../../public/Assets/smashbox.jpg";
-import amkiri from "../../public/Assets/amkiri.png";
-import cannabotech from "../../public/Assets/cannabotech.jpg";
-import noa from "../../public/Assets/noa.jpg";
-import urb from "../../public/Assets/nanuka.jpg";
-import beards from "../../public/Assets/beards.jpg";
-import seeds from "../../public/Assets/seeds.png";
-import clinique from "../../public/Assets/clinique.jpg";
-import dafni from "../../public/Assets/dafni.jpg";
-import tlip from "../../public/Assets/tlip.jpg";
-import mayven from "../../public/Assets/mayven.png";
-import seboCalm from "../../public/Assets/seboCalm.jpg";
-import roi from "../../public/Assets/roi-ben.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image from "next/image";
 
 const ClientSlider = () => {
   const settings = {
@@ -34,22 +17,86 @@ const ClientSlider = () => {
       <h1 className="font-bold text-5xl mb-8">Our Clients</h1>
       <div className="grayscale">
         <Slider {...settings}>
-          <Image src={nanuka} objectFit="cover" width={182} height={93} />
-          <Image src={maelys} objectFit="cover" width={182} height={93} />
-          <Image src={tenesse} objectFit="cover" width={182} height={93} />
-          <Image src={smashbox} objectFit="cover" width={182} height={93} />
-          <Image src={amkiri} objectFit="cover" width={182} height={93} />
-          <Image src={cannabotech} objectFit="cover" width={182} height={93} />
-          <Image src={noa} objectFit="cover" width={182} height={93} />
-          <Image src={urb} objectFit="cover" width={182} height={93} />
-          <Image src={beards} objectFit="cover" width={182} height={93} />
-          <Image src={seeds} objectFit="cover" width={182} height={93} />
-          <Image src={clinique} objectFit="cover" width={182} height={93} />
-          <Image src={dafni} objectFit="cover" width={182} height={93} />
-          <Image src={tlip} objectFit="cover" width={182} height={93} />
-          <Image src={mayven} objectFit="cover" width={182} height={93} />
-          <Image src={seboCalm} objectFit="cover" width={182} height={93} />
-          <Image src={roi} objectFit="cover" width={182} height={93} />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/maelys.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/Tennessee-Heritage-ranch.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/nanuka.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/23b2297349740ba1c5ca93d1ecee6805.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/download.png"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/1590255738994.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/noa-kirel.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/URB-Cosmetics.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/logo.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/clinique.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/roi-ben.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/13seeds_Logo_Master_CMYK_Small_4d96485f-d159-40d6-b6c7-13793710fa89.png"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/qqlbpv.png"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/download.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/dafni.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/seboCalm.jpg"
+            alt=""
+            className="w-[182px] h-[92px] object-cover pl-2 pb-2"
+          />
         </Slider>
       </div>
     </div>
