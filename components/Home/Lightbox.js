@@ -1,6 +1,7 @@
 import React from "react";
+import ReactPlayer from "react-player";
 
-const Lightbox = ({ src, open, vid }) => {
+const Lightbox = ({ src, open, setOpen, vid }) => {
   return (
     <div
       className={`${
@@ -10,7 +11,12 @@ const Lightbox = ({ src, open, vid }) => {
       }`}
     >
       <div className="flex items-center justify-center h-full">
-        <img src={src} alt="" />
+        <ReactPlayer
+          url="./Assets/gallery/v1.mp4"
+          width="50%"
+          height="50%"
+          controls={true}
+        />
       </div>
     </div>
   );

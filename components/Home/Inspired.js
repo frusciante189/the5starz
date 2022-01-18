@@ -5,11 +5,12 @@ const Inspired = () => {
   const [image, setImage] = useState("");
   const [video, setVideo] = useState("");
   const [open, setOpen] = useState(false);
+  const [videoPath, setVideoPath] = useState(null);
 
   const clickHandle = () => {
     setOpen(true);
-    setImage("https://the5starz.com/wp-content/uploads/2021/11/pro8.jpg");
   };
+
   return (
     <section className="bg-[#D6D4D5]">
       <div className="lg:px-[70px] sm:px-12 p-5 sm:py-7 md:py-10 lg:py-12 xl:py-16">
