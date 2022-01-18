@@ -13,6 +13,7 @@ export default function Home() {
       <ProblemSolution />
       <Client />
       <Testimonial />
+      <Inspired />
       <Authenticity />
       <Form />
     </>
