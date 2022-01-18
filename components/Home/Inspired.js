@@ -16,10 +16,15 @@ const Inspired = () => {
           alt=""
           onClick={() => setOpen(true)}
         />
-        <img
-          src="https://the5starz.com/wp-content/uploads/2021/12/0a7bae_f228cfc6624042f69687c777945a9596_mv2.jpeg"
-          alt=""
-        />
+        <div className="relative">
+          <img
+            src="https://the5starz.com/wp-content/uploads/2021/12/0a7bae_f228cfc6624042f69687c777945a9596_mv2.jpeg"
+            alt=""
+          />
+          <span className="absolute bottom-3 left-3 text-white bg-black p-3 bg-opacity-50 font-bold text-sm">
+            Anna Stern for Smashbox
+          </span>
+        </div>
         <img
           src="https://the5starz.com/wp-content/uploads/2021/11/pro6.jpg"
           alt=""
