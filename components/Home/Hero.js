@@ -13,7 +13,7 @@ const Hero = () => {
             just like you
           </h1>
           <p className="text-lg max-w-xl mt-5">
-            We connect brands with <span className="font-bold">real</span>
+            We connect brands with <span className="font-bold">real </span>
             people in return for their authentic, homemade content.
           </p>
           <div className="flex md:flex-row flex-col md:space-x-4 space-y-4 md:space-y-0 md:mt-8 mt-5 w-3/4 md:w-2/3 lg:w-1/3">
