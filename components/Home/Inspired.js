@@ -117,7 +117,7 @@ const Inspired = () => {
       <div className="lg:px-[70px] sm:px-12 p-5 sm:py-7 md:py-10 lg:py-12 xl:py-16">
         <h1 className="text-center text-[28px] leading-[28px]">Get inspired</h1>
       </div>
-      <div className="mt-10 px-20 lg:columns-4 columns-2 break-before-avoid gap-x-6 gap-y-10 relative">
+      <div className="mt-10 lg:px-20 md:px-12 px-6 lg:columns-4 columns-2 break-before-avoid gap-x-6 gap-y-10 relative">
         {data.map((item, index) => {
           return (
             <div className="relative cursor-pointer" key={index}>
@@ -126,7 +126,7 @@ const Inspired = () => {
                 alt={item.title}
                 onClick={() => handleClick(item, index)}
               />
-              <span className="absolute bottom-3 left-3 text-white bg-black p-3 bg-opacity-50 font-medium text-sm">
+              <span className="absolute sm:bottom-3 sm:left-3 left-0 bottom-2 text-white bg-black sm:p-3 p-1 bg-opacity-50 font-medium text-sm">
                 {item.title}
               </span>
             </div>
