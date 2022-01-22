@@ -13,13 +13,13 @@ const Footer = () => {
           <Link href="/join-our-community">
             <a className="px-5 py-3 text-sm">Join our community</a>
           </Link>
-          <Link href="/reviewz">
+          <Link href="/">
             <a className="px-5 py-3 text-sm">Content creator tips</a>
           </Link>
-          <Link href="/reviewz">
+          <Link href="/">
             <a className="px-5 py-3 text-sm">Privacy Policy</a>
           </Link>
-          <Link href="/reviewz">
+          <Link href="/">
             <a className="px-5 py-3 text-sm">Terms & Conditions</a>
           </Link>
         </div>
