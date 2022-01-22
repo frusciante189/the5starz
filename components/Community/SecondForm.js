@@ -1,7 +1,7 @@
 import Input from "./Input";
 import SelectInput from "./SelectInput";
 
-const SecondForm = () => {
+const SecondForm = ({ index, setIndex }) => {
   return (
     <div className="lg:mt-[50px] md:mt-10 mt-5 pb-[60px] border-b">
       <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0">
@@ -174,6 +174,22 @@ const SecondForm = () => {
             *1 being not important, and 5 Extremely important
           </p>
         </div>
+      </div>
+      <div className="mt-4 flex space-x-4">
+        {index >= 1 && (
+          <button
+            className="bg-white border-2 border-primaryRed text-primaryRed px-[30px] py-4 font-bold text-lg"
+            onClick={() => setIndex((oldState) => oldState - 1)}
+          >
+            PREVIOUS
+          </button>
+        )}
+        <button
+          className="bg-primaryRed text-white px-[30px] py-4 font-bold text-lg"
+          onClick={() => setIndex((oldState) => oldState + 1)}
+        >
+          {index === 2 ? <span>Submit</span> : <span>Next</span>}
+        </button>
       </div>
     </div>
   );

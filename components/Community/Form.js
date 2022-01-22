@@ -47,25 +47,9 @@ const Form = () => {
           </div>
         </div>
       </div>
-      {index === 0 && <FirstForm />}
-      {index === 1 && <SecondForm />}
-      {index === 2 && <ThirdForm />}
-      <div className="mt-4 flex space-x-4">
-        {index >= 1 && (
-          <button
-            className="bg-white border-2 border-primaryRed text-primaryRed px-[30px] py-4 font-bold text-lg"
-            onClick={() => setIndex((oldState) => oldState - 1)}
-          >
-            PREVIOUS
-          </button>
-        )}
-        <button
-          className="bg-primaryRed text-white px-[30px] py-4 font-bold text-lg"
-          onClick={() => setIndex((oldState) => oldState + 1)}
-        >
-          {index === 2 ? <span>Submit</span> : <span>Next</span>}
-        </button>
-      </div>
+      {index === 0 && <FirstForm index={index} setIndex={setIndex} />}
+      {index === 1 && <SecondForm index={index} setIndex={setIndex} />}
+      {index === 2 && <ThirdForm index={index} setIndex={setIndex} />}
     </section>
   );
 };

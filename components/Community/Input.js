@@ -1,10 +1,10 @@
 import React from "react";
 
-const Input = ({ label, placeholder }) => {
+const Input = ({ label, placeholder, type }) => {
   return (
     <div className="">
       <input
-        type="text"
+        type={type}
         className="border w-full p-3 focus:outline-none"
         placeholder={placeholder}
       />

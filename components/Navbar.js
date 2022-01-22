@@ -18,8 +18,7 @@ const Navbar = () => {
           <Image
             src={Logo}
             alt="the5starz Brand Logo"
-            className="object-cover"
-            placeholder="blur"
+            className="object-cover cursor-pointer"
             width={212}
             height={78}
           />
