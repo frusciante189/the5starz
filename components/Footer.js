@@ -24,12 +24,12 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex space-x-2.5">
-          <Link href="/reviewz">
+          <Link href="https://www.facebook.com/the5starz">
             <a className="p-1.5 rounded-full bg-white">
               <FaFacebook size={18} className="fill-black" />
             </a>
           </Link>
-          <Link href="/reviewz">
+          <Link href="https://www.instagram.com/the.5starz/">
             <a className="p-1.5 rounded-full bg-white">
               <FaInstagram size={18} className="fill-black" />
             </a>
