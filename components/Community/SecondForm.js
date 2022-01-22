@@ -17,7 +17,7 @@ const SecondForm = ({ index, setIndex }) => {
             <SelectInput>
               <option value="yes">Yes</option>
               <option value="no">No</option>
-              <option value="">
+              <option value="both">
                 I would do it for a product I really want
               </option>
             </SelectInput>
