@@ -64,7 +64,7 @@ const Testimonial = () => {
                   alt="the5starzz"
                 />
                 <h1 className="font-bold text-lg text-center mt-2">
-                  Yafit Eldan
+                  Sharon Dover
                 </h1>
                 <p className="text-sm">VP Marketing</p>
               </div>

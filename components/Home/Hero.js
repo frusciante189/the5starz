@@ -25,7 +25,7 @@ const Hero = () => {
             We connect brands with <span className="font-bold">real </span>
             people in return for their authentic, homemade content.
           </p>
-          <div className="flex md:flex-row flex-col md:space-x-4 space-y-4 md:space-y-0 md:mt-8 mt-5 w-3/4 md:w-2/3 lg:w-2/5">
+          <div className="flex md:flex-row flex-col md:space-x-4 space-y-4 md:space-y-0 md:mt-8 mt-5 w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5">
             <button
               className="bg-primaryRed px-5 py-4 text-white font-bold uppercase flex items-center justify-between w-full"
               onClick={handleScroll}
