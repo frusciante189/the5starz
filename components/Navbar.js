@@ -15,13 +15,15 @@ const Navbar = () => {
     <nav className="absolute inset-x-0 top-0 z-10">
       <div className="flex justify-between items-center lg:px-[70px] sm:px-12 px-2 py-5">
         <Link href="/">
-          <Image
-            src={Logo}
-            alt="the5starz Brand Logo"
-            className="object-cover cursor-pointer"
-            width={212}
-            height={78}
-          />
+          <a>
+            <Image
+              src={Logo}
+              alt="the5starz Brand Logo"
+              className="object-cover cursor-pointer"
+              width={212}
+              height={78}
+            />
+          </a>
         </Link>
         <div>
           <button

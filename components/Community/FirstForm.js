@@ -1,22 +1,59 @@
-import Input from "./Input";
-import { useForm } from "react-hook-form";
+import { useLocalStorage } from "../useLocalStorage";
+import React, { useState } from "react";
 
-const FirstForm = ({ index, setIndex }) => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = () => {
-    setIndex((oldState) => oldState + 1);
+const FirstForm = ({ index, setIndex, firstData, setFirstData }) => {
+  const [firstName, setFirstName] = useLocalStorage("firstName", "");
+  const [lastName, setLastName] = useLocalStorage("lastName", "");
+  const [email, setEmail] = useLocalStorage("email", "");
+  const [phone, setPhone] = useLocalStorage("phone", "");
+  const [street, setStreet] = useLocalStorage("street", "");
+  const [city, setCity] = useLocalStorage("city", "");
+  const [state, setState] = useLocalStorage("state", "");
+  const [zip, setZip] = useLocalStorage("zip", "");
+  const [country, setCountry] = useLocalStorage("country", "");
+  const [day, setDay] = useLocalStorage("day", "");
+  const [month, setMonth] = useLocalStorage("month", "");
+  const [year, setYear] = useLocalStorage("year", "");
+  const [socials, setSocials] = useLocalStorage("socials", "");
+
+  const handleClick = (e) => {
+    if (
+      (firstName,
+      lastName,
+      email,
+      phone,
+      street,
+      city,
+      state,
+      zip,
+      country,
+      day,
+      month,
+      year,
+      socials)
+    ) {
+      setIndex((oldState) => oldState + 1);
+      e.preventDefault();
+      setFirstData([
+        firstName,
+        lastName,
+        email,
+        phone,
+        street,
+        city,
+        state,
+        zip,
+        country,
+        day,
+        month,
+        year,
+        socials,
+      ]);
+    }
   };
 
   return (
-    <form
-      className="lg:mt-[50px] md:mt-10 mt-5 pb-[60px] border-b"
-      onSubmit={handleSubmit(onSubmit)}
-    >
+    <form className="lg:mt-[50px] md:mt-10 mt-5 pb-[60px] border-b">
       <div>
         <h1 className="font-bold mb-4">
           Name{" "}
@@ -27,10 +64,11 @@ const FirstForm = ({ index, setIndex }) => {
         <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0">
           <div>
             <input
-              {...register("name", { required: true })}
               className="border w-full p-3 focus:outline-none"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
             />
-            {errors.name && (
+            {!firstName && (
               <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
                 This field is required
               </p>
@@ -44,10 +82,11 @@ const FirstForm = ({ index, setIndex }) => {
           </div>
           <div>
             <input
-              {...register("lastname", { required: true })}
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
               className="border w-full p-3 focus:outline-none"
             />
-            {errors.lastname && (
+            {!lastName && (
               <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
                 This field is required
               </p>
@@ -72,10 +111,11 @@ const FirstForm = ({ index, setIndex }) => {
           <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
             <div>
               <input
-                {...register("email", { required: true })}
                 className="border w-full p-3 focus:outline-none"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              {errors.email && (
+              {!email && (
                 <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
                   This field is required
                 </p>
@@ -93,10 +133,11 @@ const FirstForm = ({ index, setIndex }) => {
           <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
             <div>
               <input
-                {...register("phone", { required: true })}
                 className="border w-full p-3 focus:outline-none"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
               />
-              {errors.phone && (
+              {!phone && (
                 <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
                   This field is required
                 </p>
@@ -115,10 +156,11 @@ const FirstForm = ({ index, setIndex }) => {
         <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
           <div>
             <input
-              {...register("address", { required: true })}
               className="border w-full p-3 focus:outline-none"
+              value={street}
+              onChange={(e) => setStreet(e.target.value)}
             />
-            {errors.address && (
+            {!street && (
               <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
                 This field is required
               </p>
@@ -134,10 +176,11 @@ const FirstForm = ({ index, setIndex }) => {
         <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0 mt-4">
           <div>
             <input
-              {...register("city", { required: true })}
               className="border w-full p-3 focus:outline-none"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
             />
-            {errors.city && (
+            {!city && (
               <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
                 This field is required
               </p>
@@ -151,10 +194,11 @@ const FirstForm = ({ index, setIndex }) => {
           </div>
           <div>
             <input
-              {...register("state", { required: true })}
               className="border w-full p-3 focus:outline-none"
+              value={state}
+              onChange={(e) => setState(e.target.value)}
             />
-            {errors.state && (
+            {!state && (
               <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
                 This field is required
               </p>
@@ -170,10 +214,11 @@ const FirstForm = ({ index, setIndex }) => {
         <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0 mt-4">
           <div>
             <input
-              {...register("zip", { required: true })}
               className="border w-full p-3 focus:outline-none"
+              value={zip}
+              onChange={(e) => setZip(e.target.value)}
             />
-            {errors.zip && (
+            {!zip && (
               <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
                 This field is required
               </p>
@@ -187,10 +232,11 @@ const FirstForm = ({ index, setIndex }) => {
           </div>
           <div>
             <input
-              {...register("country", { required: true })}
               className="border w-full p-3 focus:outline-none"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
             />
-            {errors.country && (
+            {!country && (
               <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
                 This field is required
               </p>
@@ -215,11 +261,12 @@ const FirstForm = ({ index, setIndex }) => {
           <div className="grid grid-cols-3 sm:gap-x-5 gap-x-4 gap-y-4 sm:gap-y-0 lg:w-1/2 md:w-2/3 w-3/4">
             <div>
               <input
-                {...register("dd", { required: true })}
                 className="border w-full p-3 focus:outline-none"
                 placeholder="DD"
+                value={day}
+                onChange={(e) => setDay(e.target.value)}
               />
-              {errors.dd && (
+              {!day && (
                 <p className="w-full p-2 mt-2 border border-primaryRed text-primaryRed font-semibold text-xs">
                   This field is required
                 </p>
@@ -227,11 +274,12 @@ const FirstForm = ({ index, setIndex }) => {
             </div>
             <div>
               <input
-                {...register("mm", { required: true })}
                 className="border w-full p-3 focus:outline-none"
                 placeholder="MM"
+                value={month}
+                onChange={(e) => setMonth(e.target.value)}
               />
-              {errors.mm && (
+              {!month && (
                 <p className="w-full p-2 mt-2 border border-primaryRed text-primaryRed font-semibold text-xs">
                   This field is required
                 </p>
@@ -239,11 +287,12 @@ const FirstForm = ({ index, setIndex }) => {
             </div>
             <div>
               <input
-                {...register("yyyy", { required: true })}
                 className="border w-full p-3 focus:outline-none"
                 placeholder="YYYY"
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
               />
-              {errors.yyyy && (
+              {!year && (
                 <p className="w-full p-2 mt-2 border border-primaryRed text-primaryRed font-semibold text-xs">
                   This field is required
                 </p>
@@ -261,10 +310,11 @@ const FirstForm = ({ index, setIndex }) => {
           <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
             <div>
               <input
-                {...register("socials", { required: true })}
                 className="border w-full p-3 focus:outline-none"
+                value={socials}
+                onChange={(e) => setSocials(e.target.value)}
               />
-              {errors.socials && (
+              {!socials && (
                 <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
                   This field is required
                 </p>
@@ -274,19 +324,11 @@ const FirstForm = ({ index, setIndex }) => {
         </div>
       </div>
       <div className="mt-4 flex space-x-4">
-        {index >= 1 && (
-          <button
-            className="bg-white border-2 border-primaryRed text-primaryRed px-[30px] py-4 font-bold text-lg"
-            onClick={() => setIndex((oldState) => oldState - 1)}
-          >
-            PREVIOUS
-          </button>
-        )}
         <button
           className="bg-primaryRed text-white px-[30px] py-4 font-bold text-lg"
-          type="submit"
+          onClick={handleClick}
         >
-          {index === 2 ? <span>Submit</span> : <span>Next</span>}
+          Next
         </button>
       </div>
     </form>

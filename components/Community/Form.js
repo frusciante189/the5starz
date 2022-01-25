@@ -5,6 +5,11 @@ import ThirdForm from "./ThirdForm";
 
 const Form = () => {
   const [index, setIndex] = useState(0);
+  const [firstData, setFirstData] = useState([]);
+  const [secondData, setSecondData] = useState([]);
+  const [thirdData, setThirdData] = useState([]);
+  const allData = firstData.concat(secondData, thirdData);
+
   return (
     <section className="lg:py-24 md:py-14 sm:py-10 pb-12 pt-5 lg:px-[70px] sm:px-12 px-5">
       <div className="">
@@ -47,9 +52,31 @@ const Form = () => {
           </div>
         </div>
       </div>
-      {index === 0 && <FirstForm index={index} setIndex={setIndex} />}
-      {index === 1 && <SecondForm index={index} setIndex={setIndex} />}
-      {index === 2 && <ThirdForm index={index} setIndex={setIndex} />}
+      {index === 0 && (
+        <FirstForm
+          index={index}
+          setIndex={setIndex}
+          firstData={firstData}
+          setFirstData={setFirstData}
+        />
+      )}
+      {index === 1 && (
+        <SecondForm
+          index={index}
+          setIndex={setIndex}
+          secondData={secondData}
+          setSecondData={setSecondData}
+        />
+      )}
+      {index === 2 && (
+        <ThirdForm
+          index={index}
+          setIndex={setIndex}
+          thirdData={thirdData}
+          setThirdData={setThirdData}
+          allData={allData}
+        />
+      )}
     </section>
   );
 };
