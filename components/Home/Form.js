@@ -1,7 +1,8 @@
-import axios from "axios";
 import React, { useState } from "react";
+import Banner from "./Banner";
 
 const Form = () => {
+  const [submited, setSubmited] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -13,9 +14,13 @@ const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axios.post(url, form).then((res) => {
-      console.log(res);
-    });
+    if (!form.name && !form.email && !form.message && !form.phone) {
+    } else {
+      fetch(url, { method: "POST", body: JSON.stringify(form) }).then((res) => {
+        console.log("submited", { res, url, form });
+        setSubmited(true);
+      });
+    }
   };
   const onChangeHandler = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -33,50 +38,59 @@ const Form = () => {
           </p>
         </div>
         <div className="flex flex-col text-gray-500 lg:w-1/2 w-full lg:mt-0 mt-10">
-          <form className="flex sm:flex-row flex-col sm:space-x-4 lg:justify-start">
-            <div className="flex flex-col sm:w-1/2 space-y-3">
-              <input
-                type="text"
-                placeholder="Name"
-                name="name"
-                className="border p-3 focus:outline-none placeholder:text-lg placeholder:text-gray-400 border-gray-300"
-                value={form.name}
-                onChange={onChangeHandler}
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                name="email"
-                value={form.email}
-                onChange={onChangeHandler}
-                className="border p-3 focus:outline-none placeholder:text-lg placeholder:text-gray-400 border-gray-300"
-              />
-              <input
-                type="text"
-                placeholder="Phone"
-                name="phone"
-                value={form.phone}
-                onChange={onChangeHandler}
-                className="border p-3 focus:outline-none placeholder:text-lg placeholder:text-gray-400 border-gray-300"
-              />
-            </div>
-            <div className="w-full mt-4 sm:mt-0">
-              <textarea
-                className="border resize-none focus:outline-none border-gray-300 p-4 sm:h-full h-40 w-full"
-                placeholder="Message"
-                name="message"
-                value={form.message}
-                onChange={onChangeHandler}
-              ></textarea>
-            </div>
-          </form>
-          <div className="flex justify-end mt-2.5">
-            <input
-              type="submit"
-              onClick={onSubmit}
-              className="bg-primaryRed text-white font-bold px-[30px] py-2 text-lg uppercase cursor-pointer"
+          {submited && (
+            <Banner
+              title="Thanks for your interest!"
+              text="We will contact you shortly"
             />
-          </div>
+          )}
+          {!submited && (
+            <form onSubmit={onSubmit}>
+              <div className="flex sm:flex-row flex-col sm:space-x-4 lg:justify-start">
+                <div className="flex flex-col sm:w-1/2 space-y-3">
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    name="name"
+                    className="border p-3 focus:outline-none placeholder:text-lg placeholder:text-gray-400 border-gray-300"
+                    value={form.name}
+                    onChange={onChangeHandler}
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    name="email"
+                    value={form.email}
+                    onChange={onChangeHandler}
+                    className="border p-3 focus:outline-none placeholder:text-lg placeholder:text-gray-400 border-gray-300"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Phone"
+                    name="phone"
+                    value={form.phone}
+                    onChange={onChangeHandler}
+                    className="border p-3 focus:outline-none placeholder:text-lg placeholder:text-gray-400 border-gray-300"
+                  />
+                </div>
+                <div className="w-full mt-4 sm:mt-0">
+                  <textarea
+                    className="border resize-none focus:outline-none border-gray-300 p-4 sm:h-full h-40 w-full"
+                    placeholder="Message"
+                    name="message"
+                    value={form.message}
+                    onChange={onChangeHandler}
+                  ></textarea>
+                </div>
+              </div>
+              <div className="flex justify-end mt-2.5">
+                <input
+                  type="submit"
+                  className="bg-primaryRed text-white font-bold px-[30px] py-2 text-lg uppercase cursor-pointer"
+                />
+              </div>
+            </form>
+          )}
         </div>
       </div>
     </section>
