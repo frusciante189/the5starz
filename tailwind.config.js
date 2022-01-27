@@ -10,9 +10,9 @@ module.exports = {
       },
       backgroundImage: {
         banner: "url('../public/Assets/banner.jpg')",
-        bg4: "url('../public/Assets/bg4.png')",
-        bg1: "url('../public/Assets/bg.png')",
-        bg3: "url('../public/Assets/bg3.png')",
+        bg4: "url('../public/Assets/bg4.webp')",
+        bg1: "url('../public/Assets/bg.webp')",
+        bg3: "url('../public/Assets/bg3.webp')",
         bg5: "url('../public/Assets/bg5.png')",
         banner2: "url('../public/Assets/banner.png')",
       },

@@ -20,7 +20,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="absolute top-32 right-20 hidden lg:block">
-          <Image src={slp} width={500} height={500} />
+          <Image src={slp} width={500} height={500} alt="logo" />
         </div>
       </div>
     </section>

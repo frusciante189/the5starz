@@ -125,6 +125,7 @@ const Inspired = () => {
                 src={item.img}
                 alt={item.title}
                 onClick={() => handleClick(item, index)}
+                loading="lazy"
               />
               <span className="absolute sm:bottom-3 sm:left-3 left-0 bottom-2 text-white bg-black sm:p-3 p-1 bg-opacity-50 font-medium text-sm">
                 {item.title}

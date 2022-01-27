@@ -17,6 +17,7 @@ const Client = () => {
           objectFit="cover"
           width={5}
           height={2}
+          loading="lazy"
         />
       </div>
       <div className="lg:px-[70px] sm:px-12 p-5 sm:py-7 md:py-10 lg:py-12 xl:py-16">
