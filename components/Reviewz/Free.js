@@ -26,7 +26,7 @@ const Free = () => {
         <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 mt-5 gap-x-2.5 gap-y-6">
           <div className="flex flex-col items-center">
             <div className="min-h-[111px]">
-              <Image src={truck} alt="the5starzz" />
+              <Image src={truck} width={128} height={128} alt="the5starzz" />
             </div>
             <div>
               <p className="font-extrabold text-white text-[22px] leading-[22px] text-center">

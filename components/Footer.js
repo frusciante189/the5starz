@@ -23,7 +23,7 @@ const Footer = () => {
             <a className="px-5 py-3 text-sm">Terms & Conditions</a>
           </Link>
         </div>
-        <div className="flex space-x-2.5">
+        <div className="flex space-x-2.5 items-center">
           <Link href="https://www.facebook.com/the5starz">
             <a className="p-1.5 rounded-full bg-white">
               <FaFacebook size={18} className="fill-black" />

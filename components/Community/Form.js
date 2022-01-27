@@ -21,34 +21,42 @@ const Form = () => {
           <div className="flex items-center space-x-4">
             <span
               className={`${
-                index === 0 ? "bg-primaryRed text-white" : "bg-white text-black"
-              } h-10 w-10 flex items-center justify-center rounded-full outline outline-gray-300`}
+                index === 0
+                  ? "bg-primaryRed text-white flex-shrink-0"
+                  : "bg-white text-black"
+              } h-10 w-10 flex items-center justify-center flex-shrink-0 rounded-full outline outline-gray-300`}
             >
               1
             </span>
-            <h1 className="text-sm font-semibold">Personal Information</h1>
+            <h1 className="md:text-sm text-xs font-semibold">
+              Personal Information
+            </h1>
           </div>
           <div className="flex items-center space-x-4">
             <span
               className={`${
-                index === 1 ? "bg-primaryRed text-white" : "bg-white text-black"
-              } h-10 w-10 flex items-center justify-center rounded-full outline outline-gray-300 `}
+                index === 1
+                  ? "bg-primaryRed text-white flex-shrink-0"
+                  : "bg-white text-black"
+              } h-10 w-10 flex items-center justify-center flex-shrink-0 rounded-full outline outline-gray-300 `}
             >
               2
             </span>
-            <h1 className="text-sm font-semibold">
+            <h1 className="md:text-sm text-xs font-semibold">
               Getting to know you better (optional)
             </h1>
           </div>
           <div className="flex items-center space-x-4">
             <span
               className={`${
-                index === 2 ? "bg-primaryRed text-white" : "bg-white text-black"
-              } h-10 w-10 flex items-center justify-center rounded-full outline outline-gray-300 `}
+                index === 2
+                  ? "bg-primaryRed text-white flex-shrink-0"
+                  : "bg-white text-black"
+              } h-10 w-10 flex items-center justify-center flex-shrink-0 rounded-full outline outline-gray-300 `}
             >
               3
             </span>
-            <h1 className="text-sm font-semibold">Agreement</h1>
+            <h1 className="md:text-sm text-xs font-semibold">Agreement</h1>
           </div>
         </div>
       </div>

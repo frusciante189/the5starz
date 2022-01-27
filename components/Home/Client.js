@@ -8,8 +8,16 @@ import ClientSlider from "./ClientSlider";
 const Client = () => {
   return (
     <section className="relative">
-      <div>
-        <Image src={Banner} className="-scale-x-100" alt="the5starzz" />
+      <div className="">
+        <Image
+          src={Banner}
+          className="-scale-x-100"
+          alt="the5starzz"
+          layout="responsive"
+          objectFit="cover"
+          width={5}
+          height={2}
+        />
       </div>
       <div className="lg:px-[70px] sm:px-12 p-5 sm:py-7 md:py-10 lg:py-12 xl:py-16">
         <div className="flex lg:flex-row flex-col lg:space-x-10 space-y-10 lg:space-y-0">
