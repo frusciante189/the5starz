@@ -3,10 +3,10 @@ import FirstForm from "./FirstForm";
 import SecondForm from "./SecondForm";
 import ThirdForm from "./ThirdForm";
 
-export const FormNavigationBar = ({ onNext, onPrev }) => {
+export const FormNavigationBar = ({ onNext, onPrev, isLast }) => {
   return (
     <div className="mt-4 flex space-x-4">
-      {index >= 1 && (
+      {!!onPrev && (
         <button
           className="bg-white border-2 border-primaryRed text-primaryRed px-[30px] py-4 font-bold text-lg"
           onClick={(e) => {
@@ -22,7 +22,7 @@ export const FormNavigationBar = ({ onNext, onPrev }) => {
         className="bg-primaryRed text-white px-[30px] py-4 font-bold text-lg"
         type="submit"
       >
-        {index === 2 ? <span>Submit</span> : <span>Next</span>}
+        {isLast ? <span>Submit</span> : <span>Next</span>}
       </button>
     </div>
   );
