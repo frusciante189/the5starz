@@ -1,10 +1,21 @@
 import React from "react";
 import { RadioGroup, Radio } from "react-radio-group";
 import { showRequiredError } from "../utils";
+import { useForm } from "react-hook-form";
+import { FormNavigationBar } from "./Form";
 
-const ThirdForm = ({ register, errors }) => {
+const ThirdForm = ({ onNext, onPrev }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(`submit`, { data });
+  };
   return (
-    <>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0">
         <div className="">
           <div className="form-check flex flex-row">
@@ -48,7 +59,8 @@ const ThirdForm = ({ register, errors }) => {
           {showRequiredError(errors, "agreement")}
         </div>
       </div>
-    </>
+      <FormNavigationBar onNext={onNext} onPrev={onPrev} />
+    </form>
   );
 };
 
