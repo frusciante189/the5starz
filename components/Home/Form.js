@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Banner from "./Banner";
 
 const Form = () => {
-  const [submited, setSubmited] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -17,8 +17,8 @@ const Form = () => {
     if (!form.name && !form.email && !form.message && !form.phone) {
     } else {
       fetch(url, { method: "POST", body: JSON.stringify(form) }).then((res) => {
-        console.log("submited", { res, url, form });
-        setSubmited(true);
+        console.log("submitted", { res, url, form });
+        setSubmitted(true);
       });
     }
   };
@@ -38,13 +38,13 @@ const Form = () => {
           </p>
         </div>
         <div className="flex flex-col text-gray-500 lg:w-1/2 w-full lg:mt-0 mt-10">
-          {submited && (
+          {submitted && (
             <Banner
               title="Thanks for your interest!"
               text="We will contact you shortly"
             />
           )}
-          {!submited && (
+          {!submitted && (
             <form onSubmit={onSubmit}>
               <div className="flex sm:flex-row flex-col sm:space-x-4 lg:justify-start">
                 <div className="flex flex-col sm:w-1/2 space-y-3">

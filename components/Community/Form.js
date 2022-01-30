@@ -2,13 +2,55 @@ import React, { useState } from "react";
 import FirstForm from "./FirstForm";
 import SecondForm from "./SecondForm";
 import ThirdForm from "./ThirdForm";
+import { useForm } from "react-hook-form";
+
+const NavigationBar = ({ index, setIndex }) => {
+  return (
+    <div className="mt-4 flex space-x-4">
+      {index >= 1 && (
+        <button
+          className="bg-white border-2 border-primaryRed text-primaryRed px-[30px] py-4 font-bold text-lg"
+          onClick={(e) => {
+            e.preventDefault();
+            setIndex((oldState) => oldState - 1);
+            window.scrollTo(0, 0);
+          }}
+        >
+          PREVIOUS
+        </button>
+      )}
+      <input
+        className="bg-primaryRed text-white px-[30px] py-4 font-bold text-lg"
+        type="submit"
+      />
+      {/*  {index === 2 ? <span>Submit</span> : <span>Next</span>}*/}
+      {/*</input>*/}
+    </div>
+  );
+};
 
 const Form = () => {
   const [index, setIndex] = useState(0);
-  const [firstData, setFirstData] = useState([]);
-  const [secondData, setSecondData] = useState([]);
-  const [thirdData, setThirdData] = useState([]);
-  const allData = firstData.concat(secondData, thirdData);
+  const form1 = useForm();
+  const form2 = useForm();
+  const form3 = useForm();
+
+  let form = form1;
+  if (index === 1) {
+    form = form2;
+  } else if (index === 2) {
+    form = form3;
+  }
+
+  console.log(`render ${index}`, { form1 });
+
+  const onSubmit = (data) => {
+    console.log(`submit ${index}`, { data });
+    if (index < 2) {
+      setIndex((oldState) => oldState + 1);
+      window.scrollTo(0, 0);
+    }
+  };
 
   return (
     <section className="lg:py-24 md:py-14 sm:py-10 pb-12 pt-5 lg:px-[70px] sm:px-12 px-5">
@@ -60,31 +102,26 @@ const Form = () => {
           </div>
         </div>
       </div>
-      {index === 0 && (
-        <FirstForm
-          index={index}
-          setIndex={setIndex}
-          firstData={firstData}
-          setFirstData={setFirstData}
-        />
-      )}
-      {index === 1 && (
-        <SecondForm
-          index={index}
-          setIndex={setIndex}
-          secondData={secondData}
-          setSecondData={setSecondData}
-        />
-      )}
-      {index === 2 && (
-        <ThirdForm
-          index={index}
-          setIndex={setIndex}
-          thirdData={thirdData}
-          setThirdData={setThirdData}
-          allData={allData}
-        />
-      )}
+      <div className="lg:mt-[50px] md:mt-10 mt-5 pb-[60px] border-b">
+        {index === 0 && (
+          <form onSubmit={form1.handleSubmit(onSubmit)}>
+            <FirstForm register={form1.register} errors={form1.errors} />
+            <NavigationBar index={index} setIndex={setIndex} />
+          </form>
+        )}
+        {index === 1 && (
+          <form onSubmit={form2.handleSubmit(onSubmit)}>
+            <SecondForm register={form2.register} errors={form2.errors} />
+            <NavigationBar index={index} setIndex={setIndex} />
+          </form>
+        )}
+        {index === 2 && (
+          <form onSubmit={form3.handleSubmit(onSubmit)}>
+            <ThirdForm register={form3.register} errors={form3.errors} />
+            <NavigationBar index={index} setIndex={setIndex} />
+          </form>
+        )}
+      </div>
     </section>
   );
 };
