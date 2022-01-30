@@ -225,7 +225,7 @@ const SecondForm = ({ onNext, onPrev }) => {
           </p>
         </div>
       </div>
-      <FormNavigationBar onNext={onNext} onPrev={onPrev} />
+      <FormNavigationBar onNext={onNext} onPrev={onPrev} isLast={false} />
     </form>
   );
 };

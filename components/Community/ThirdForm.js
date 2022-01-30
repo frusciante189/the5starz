@@ -59,7 +59,7 @@ const ThirdForm = ({ onNext, onPrev }) => {
           {showRequiredError(errors, "agreement")}
         </div>
       </div>
-      <FormNavigationBar onNext={onNext} onPrev={onPrev} />
+      <FormNavigationBar onNext={onNext} onPrev={onPrev} isLast={true} />
     </form>
   );
 };

@@ -3,6 +3,22 @@ import { showRequiredError } from "../utils";
 import { useForm } from "react-hook-form";
 import { FormNavigationBar } from "./Form";
 
+const range = (size, startAt = 0) => {
+  return [...Array(size).keys()].map((i) => i + startAt);
+};
+
+const selectRange = (start, end) => {
+  return [
+    <option key={0} value="select"></option>,
+
+    ...range(end - start + 1, start).map((index) => (
+      <option key={index} value={index}>
+        {index}
+      </option>
+    )),
+  ];
+};
+
 const FirstForm = ({ onNext, onPrev }) => {
   const {
     register,
@@ -12,6 +28,7 @@ const FirstForm = ({ onNext, onPrev }) => {
 
   const onSubmit = (data) => {
     console.log(`submit`, { data });
+    onNext(data);
   };
 
   return (
@@ -176,25 +193,34 @@ const FirstForm = ({ onNext, onPrev }) => {
           </h1>
           <div className="grid grid-cols-4 sm:gap-x-5 gap-x-4 gap-y-4 sm:gap-y-0">
             <div>
-              <input
+              <select
                 {...register("day", { required: true })}
                 className="border w-full p-3 focus:outline-none"
                 placeholder="DD"
-              />
+              >
+                {selectRange(1, 31)}
+              </select>
             </div>
             <div>
-              <input
+              <select
                 {...register("month", { required: true })}
                 className="border w-full p-3 focus:outline-none"
                 placeholder="MM"
-              />
+              >
+                {selectRange(1, 12)}
+              </select>
             </div>
             <div className="col-span-2">
-              <input
+              <select
                 {...register("year", { required: true })}
                 className="border w-full p-3 focus:outline-none"
                 placeholder="YYYY"
-              />
+              >
+                {selectRange(
+                  new Date().getFullYear() - 100,
+                  new Date().getFullYear() - 16
+                )}
+              </select>
             </div>
           </div>
           {(errors?.day?.type === "required" ||
@@ -224,7 +250,7 @@ const FirstForm = ({ onNext, onPrev }) => {
         </div>
       </div>
 
-      <FormNavigationBar onNext={onNext} onPrev={onPrev} />
+      <FormNavigationBar onNext={onNext} onPrev={onPrev} isLast={false} />
     </form>
   );
 };
