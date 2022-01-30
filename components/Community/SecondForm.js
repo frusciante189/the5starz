@@ -1,10 +1,25 @@
 import React, { useState } from "react";
 import { useLocalStorage } from "../useLocalStorage";
 import { RadioGroup, Radio } from "react-radio-group";
+import { useForm } from "react-hook-form";
+import { FormNavigationBar } from "./Form";
 
-const SecondForm = ({ register, errors }) => {
+const SecondForm = ({ onNext, onPrev }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(`submit`, { data });
+  };
+
   return (
-    <div className="lg:mt-[50px] md:mt-10 mt-5 pb-[60px] border-b">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="lg:mt-[50px] md:mt-10 mt-5 pb-[60px] border-b"
+    >
       <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0">
         <div className="">
           <h1 className="font-bold mb-4">Education</h1>
@@ -210,7 +225,8 @@ const SecondForm = ({ register, errors }) => {
           </p>
         </div>
       </div>
-    </div>
+      <FormNavigationBar onNext={onNext} onPrev={onPrev} />
+    </form>
   );
 };
 

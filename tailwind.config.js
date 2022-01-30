@@ -7,6 +7,8 @@ module.exports = {
     extend: {
       colors: {
         primaryRed: "#F74A46",
+        secondaryRed: "#c02b0a",
+        bgRed: "rgb(255, 249, 249)",
       },
       backgroundImage: {
         banner: "url('../public/Assets/banner.jpg')",

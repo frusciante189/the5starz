@@ -1,9 +1,21 @@
 import React from "react";
 import { showRequiredError } from "../utils";
+import { useForm } from "react-hook-form";
+import { FormNavigationBar } from "./Form";
 
-const FirstForm = ({ register, errors }) => {
+const FirstForm = ({ onNext, onPrev }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(`submit`, { data });
+  };
+
   return (
-    <>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div>
         <h1 className="font-bold mb-4">
           Name{" "}
@@ -155,14 +167,14 @@ const FirstForm = ({ register, errors }) => {
         </div>
       </div>
       <div className="mt-10 grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0">
-        <div className="">
+        <div>
           <h1 className="font-bold mb-4">
             Birthday{" "}
             <span className="font-bold text-primaryRed text-xl text-center inline-block">
               *
             </span>
           </h1>
-          <div className="grid grid-cols-3 sm:gap-x-5 gap-x-4 gap-y-4 sm:gap-y-0 lg:w-1/2 md:w-2/3 w-3/4">
+          <div className="grid grid-cols-4 sm:gap-x-5 gap-x-4 gap-y-4 sm:gap-y-0">
             <div>
               <input
                 {...register("day", { required: true })}
@@ -177,7 +189,7 @@ const FirstForm = ({ register, errors }) => {
                 placeholder="MM"
               />
             </div>
-            <div>
+            <div className="col-span-2">
               <input
                 {...register("year", { required: true })}
                 className="border w-full p-3 focus:outline-none"
@@ -188,7 +200,7 @@ const FirstForm = ({ register, errors }) => {
           {(errors?.day?.type === "required" ||
             errors?.month?.type === "required" ||
             errors?.year?.type === "required") && (
-            <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
+            <p className="w-full pl-4 py-3 mt-2 border border-secondaryRed text-secondaryRed bg-bgRed">
               This field is required
             </p>
           )}
@@ -211,7 +223,9 @@ const FirstForm = ({ register, errors }) => {
           </div>
         </div>
       </div>
-    </>
+
+      <FormNavigationBar onNext={onNext} onPrev={onPrev} />
+    </form>
   );
 };
 
