@@ -72,10 +72,10 @@ const Testimonial = () => {
           </Slider>
         </div>
       </div>
-      <div className="absolute md:-top-4 sm:top-0 -top-2 md:left-12 sm:left-5 left-px lg:w-64 lg:h-36 md:w-32 md:h-16 w-16 h-8">
+      <div className="absolute md:-top-4 sm:top-0 -top-2 md:left-12 sm:left-5 left-px lg:w-64 lg:h-36 md:w-32 md:h-20 w-16 h-10">
         <Image src={q1} layout="fill" objectFit="cover" alt="the5starzz" />
       </div>
-      <div className="absolute md:-bottom-4 bottom-0 md:right-12 sm:right-5 right-2 lg:w-64 lg:h-36 md:w-32 md:h-16 w-16 h-8">
+      <div className="absolute md:-bottom-4 bottom-0 md:right-12 sm:right-5 right-2 lg:w-64 lg:h-36 md:w-32 md:h-20 w-16 h-10">
         <Image src={q2} layout="fill" objectFit="cover" alt="the5starzz" />
       </div>
     </section>
