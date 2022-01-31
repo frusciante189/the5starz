@@ -191,7 +191,7 @@ const FirstForm = ({ onNext, onPrev }) => {
               *
             </span>
           </h1>
-          <div className="grid grid-cols-4 sm:gap-x-5 gap-x-4 gap-y-4 sm:gap-y-0">
+          <div className="flex space-x-4 text-center">
             <div>
               <select
                 {...register("day", { required: true })}
