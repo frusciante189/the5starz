@@ -27,11 +27,13 @@ const Footer = () => {
           <Link href="https://www.facebook.com/the5starz">
             <a className="p-1.5 rounded-full bg-white">
               <FaFacebook size={18} className="fill-black" />
+              <span className="sr-only">Facebook link</span>
             </a>
           </Link>
           <Link href="https://www.instagram.com/the.5starz/">
             <a className="p-1.5 rounded-full bg-white">
               <FaInstagram size={18} className="fill-black" />
+              <span className="sr-only">Instagram link</span>
             </a>
           </Link>
         </div>
