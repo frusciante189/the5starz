@@ -48,9 +48,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 z-[-1] left-0">
-        <Image src={Banner} priority alt="hero banner" />
-      </div>
     </div>
   );
 };
