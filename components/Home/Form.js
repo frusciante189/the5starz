@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Banner from "./Banner";
+import { backendHost } from "../../utils/constants";
 
 const Form = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -10,13 +11,20 @@ const Form = () => {
     message: "",
   });
 
-  const url = "https://jsonplaceholder.typicode.com/posts";
+  const url = `${backendHost}contact-us`;
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (!form.name && !form.email && !form.message && !form.phone) {
     } else {
-      fetch(url, { method: "POST", body: JSON.stringify(form) }).then((res) => {
+      fetch(url, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      }).then((res) => {
         console.log("submitted", { res, url, form });
         setSubmitted(true);
       });

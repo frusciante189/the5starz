@@ -44,7 +44,7 @@ const SecondForm = ({ onNext, onPrev, data }) => {
           </div>
         </div>
       </div>
-      {!!simplified && (
+      {!simplified && (
         <>
           <div className="mt-4">
             <FieldHeader title="People in household under 18" />
