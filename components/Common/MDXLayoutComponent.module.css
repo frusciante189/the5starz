@@ -1,10 +1,12 @@
 .article {
-    margin: 2rem;
+    margin: 4rem;
     line-height: 1.76rem;
 }
 
-.article h1 {
-    color: green;
+@media only screen and (max-width: 640px) {
+    .article {
+        margin: 2rem;
+    }
 }
 
 .article ol {
