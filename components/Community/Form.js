@@ -4,9 +4,10 @@ import SecondForm from "./SecondForm";
 import ThirdForm from "./ThirdForm";
 import Banner from "../Home/Banner";
 import Stepper from "./Stepper";
+import { backendHost } from "../../utils/constants";
 
 export const simplified = false;
-const url = "https://api.the5starz.com/contributor-landing-page-answer";
+const url = `${backendHost}contributor-landing-page-answer`;
 
 const Form = () => {
   const [index, setIndex] = useState(0);
@@ -21,14 +22,22 @@ const Form = () => {
 
     fetch(url, {
       method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         ...data,
         birthday,
         form_id: "the5starz.com-website",
       }),
-    }).then((res) => {
-      console.log("submitted", { res, url, form });
-    });
+    })
+      .then((res) => {
+        console.log("submitted", { res, url, data });
+      })
+      .catch((res) => {
+        console.log(`Form post results`, { res });
+      });
   };
 
   const handleNext = (data) => {

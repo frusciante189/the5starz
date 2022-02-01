@@ -7,7 +7,7 @@ const Stepper = ({ index, steps }) => {
       <div className="lg:mt-[70px] md:mt-[50px] mt-10 flex sm:flex-row flex-col items-start sm:items-center justify-center sm:space-x-8 space-y-4 sm:space-y-0 lg:pb-[46px] md:pb-8 pb-5 border-b">
         {steps.map((step, idx) => {
           return (
-            <div className="flex items-center space-x-4">
+            <div key={idx} className="flex items-center space-x-4">
               <span
                 className={`${
                   index === idx
