@@ -17,6 +17,7 @@ module.exports = {
         bg3: "url('../public/Assets/bg3.webp')",
         bg5: "url('../public/Assets/bg5.png')",
         banner2: "url('../public/Assets/banner.png')",
+        headerBackground: "url('../public/Assets/header-bg.webp')",
       },
     },
   },

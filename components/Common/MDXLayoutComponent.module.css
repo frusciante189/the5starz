@@ -1,0 +1,18 @@
+.article {
+    margin: 2rem;
+    line-height: 1.76rem;
+}
+
+.article h1 {
+    color: green;
+}
+
+.article ol {
+    list-style-type: decimal;
+    padding-left: 2rem;
+}
+
+.article ul {
+    list-style-type: circle;
+    padding-left: 2rem;
+}

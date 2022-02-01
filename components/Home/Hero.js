@@ -1,8 +1,6 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
-import Image from "next/image";
-import Banner from "../../public/Assets/banner.jpg";
 
 const Hero = () => {
   const handleScroll = () => {

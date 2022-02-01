@@ -30,7 +30,7 @@ const Navbar = () => {
             className="bg-primaryRed text-white lg:py-3 lg:px-5 py-2 px-3 uppercase text-sm font-semibold"
             onClick={handleScroll}
           >
-            Lets Talk
+            Let`s Talk
           </button>
         </div>
       </div>
