@@ -1,336 +1,193 @@
-import { useLocalStorage } from "../useLocalStorage";
-import React, { useState } from "react";
+import React from "react";
+import { showRequiredError } from "../utils";
+import { useForm } from "react-hook-form";
+import FormNavigationBar from "./FormNavigationBar";
+import { simplified } from "./Form";
+import FieldHeader from "./FieldHeader";
 
-const FirstForm = ({ index, setIndex, firstData, setFirstData }) => {
-  const [firstName, setFirstName] = useLocalStorage("firstName", "");
-  const [lastName, setLastName] = useLocalStorage("lastName", "");
-  const [email, setEmail] = useLocalStorage("email", "");
-  const [phone, setPhone] = useLocalStorage("phone", "");
-  const [street, setStreet] = useLocalStorage("street", "");
-  const [city, setCity] = useLocalStorage("city", "");
-  const [state, setState] = useLocalStorage("state", "");
-  const [zip, setZip] = useLocalStorage("zip", "");
-  const [country, setCountry] = useLocalStorage("country", "");
-  const [day, setDay] = useLocalStorage("day", "");
-  const [month, setMonth] = useLocalStorage("month", "");
-  const [year, setYear] = useLocalStorage("year", "");
-  const [socials, setSocials] = useLocalStorage("socials", "");
+const range = (size, startAt = 0) => {
+  return [...Array(size).keys()].map((i) => i + startAt);
+};
 
-  const handleClick = (e) => {
-    if (
-      (firstName,
-      lastName,
-      email,
-      phone,
-      street,
-      city,
-      state,
-      zip,
-      country,
-      day,
-      month,
-      year,
-      socials)
-    ) {
-      setIndex((oldState) => oldState + 1);
-      e.preventDefault();
-      setFirstData([
-        firstName,
-        lastName,
-        email,
-        phone,
-        street,
-        city,
-        state,
-        zip,
-        country,
-        day,
-        month,
-        year,
-        socials,
-      ]);
-    }
-  };
+const selectRange = (name, start, end) => {
+  return [
+    // <option value={null}>{name}</option>,
+
+    ...range(end - start + 1, start).map((index) => (
+      <option key={index} value={index}>
+        {index}
+      </option>
+    )),
+  ];
+};
+
+const FirstForm = ({ onNext, onPrev, data }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ defaultValues: data });
 
   return (
-    <form className="lg:mt-[50px] md:mt-10 mt-5 pb-[60px] border-b">
+    <form onSubmit={handleSubmit(onNext)}>
       <div>
-        <h1 className="font-bold mb-4">
-          Name{" "}
-          <span className="font-bold text-primaryRed text-xl text-center inline-block">
-            *
-          </span>
-        </h1>
+        <FieldHeader title="Name" requierd />
         <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0">
           <div>
             <input
+              placeholder="First Name"
+              {...register("first_name", { required: true })}
               className="border w-full p-3 focus:outline-none"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
             />
-            {!firstName && (
-              <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
-                This field is required
-              </p>
-            )}
-            <label
-              htmlFor=""
-              className="inline-block mt-2.5 text-sm font-medium"
-            >
-              First Name
-            </label>
+            {showRequiredError(errors, "first_name")}
           </div>
           <div>
             <input
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              placeholder="Last Name"
+              {...register("last_name", { required: true })}
               className="border w-full p-3 focus:outline-none"
             />
-            {!lastName && (
-              <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
-                This field is required
-              </p>
-            )}
-            <label
-              htmlFor=""
-              className="inline-block mt-2.5 text-sm font-medium"
-            >
-              Last Name
-            </label>
+            {showRequiredError(errors, "last_name")}
           </div>
         </div>
       </div>
-      <div className="mt-10 grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0">
-        <div className="">
-          <h1 className="font-bold mb-4">
-            Email{" "}
-            <span className="font-bold text-primaryRed text-xl text-center inline-block">
-              *
-            </span>
-          </h1>
-          <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
+      {!simplified && (
+        <>
+          <div className="mt-10 grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0">
+            <div className="">
+              <FieldHeader title="Email" requierd />
+              <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
+                <div>
+                  <input
+                    {...register("email", { required: true })}
+                    className="border w-full p-3 focus:outline-none"
+                  />
+                  {showRequiredError(errors, "email")}
+                </div>
+              </div>
+            </div>
+            <div className="">
+              <FieldHeader title="Phone" requierd />
+              <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
+                <div>
+                  <input
+                    {...register("phone_number", { required: true })}
+                    className="border w-full p-3 focus:outline-none"
+                  />
+                  {showRequiredError(errors, "phone_number")}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-4">
+            <FieldHeader title="Address" requierd />
+            <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
+              <div>
+                <input
+                  placeholder="Street Address"
+                  {...register("address", { required: true })}
+                  className="border w-full p-3 focus:outline-none"
+                />
+                {showRequiredError(errors, "address")}
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0 mt-4">
+              <div>
+                <input
+                  placeholder="City"
+                  {...register("city", { required: true })}
+                  className="border w-full p-3 focus:outline-none"
+                />
+                {showRequiredError(errors, "city")}
+              </div>
+              <div>
+                <input
+                  placeholder="State / Province / Region"
+                  {...register("state")}
+                  className="border w-full p-3 focus:outline-none"
+                />
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0 mt-4">
+              <div>
+                <input
+                  placeholder="ZIP / Postal Code"
+                  {...register("zip_code", { required: true })}
+                  className="border w-full p-3 focus:outline-none"
+                />
+                {showRequiredError(errors, "zip_code")}
+              </div>
+              <div>
+                <input
+                  placeholder="Country"
+                  {...register("country", { required: true })}
+                  className="border w-full p-3 focus:outline-none"
+                />
+                {showRequiredError(errors, "country")}
+              </div>
+            </div>
+          </div>
+          <div className="mt-10 grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0">
             <div>
-              <input
-                className="border w-full p-3 focus:outline-none"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              {!email && (
-                <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
+              <FieldHeader title="Birthday" requierd />
+              <div className="flex space-x-4 text-center">
+                <div>
+                  <select
+                    {...register("birthday_day", { required: true })}
+                    className="border w-full p-3 focus:outline-none"
+                    placeholder="DD"
+                  >
+                    {selectRange("DD", 1, 31)}
+                  </select>
+                </div>
+                <div>
+                  <select
+                    {...register("birthday_month", { required: true })}
+                    className="border w-full p-3 focus:outline-none"
+                    placeholder="MM"
+                  >
+                    {selectRange("MM", 1, 12)}
+                  </select>
+                </div>
+                <div className="col-span-2">
+                  <select
+                    {...register("birthday_year", { required: true })}
+                    className="border w-full p-3 focus:outline-none"
+                    placeholder="YYYY"
+                  >
+                    {selectRange(
+                      "YYYY",
+                      new Date().getFullYear() - 100,
+                      new Date().getFullYear() - 16
+                    )}
+                  </select>
+                </div>
+              </div>
+              {(errors?.birthday_day?.type === "required" ||
+                errors?.birthday_month?.type === "required" ||
+                errors?.birthday_year?.type === "required") && (
+                <p className="w-full pl-4 py-3 mt-2 border border-secondaryRed text-secondaryRed bg-bgRed">
                   This field is required
                 </p>
               )}
             </div>
-          </div>
-        </div>
-        <div className="">
-          <h1 className="font-bold mb-4">
-            Phone{" "}
-            <span className="font-bold text-primaryRed text-xl text-center inline-block">
-              *
-            </span>
-          </h1>
-          <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
-            <div>
-              <input
-                className="border w-full p-3 focus:outline-none"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-              {!phone && (
-                <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
-                  This field is required
-                </p>
-              )}
+            <div className="">
+              <FieldHeader title="Instagram / Facebook Handle" requierd />
+              <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
+                <div>
+                  <input
+                    {...register("igfb_handle", { required: true })}
+                    className="border w-full p-3 focus:outline-none"
+                  />
+                  {showRequiredError(errors, "igfb_handle")}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="mt-4">
-        <h1 className="font-bold mb-4">
-          Address{" "}
-          <span className="font-bold text-primaryRed text-xl text-center inline-block">
-            *
-          </span>
-        </h1>
-        <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
-          <div>
-            <input
-              className="border w-full p-3 focus:outline-none"
-              value={street}
-              onChange={(e) => setStreet(e.target.value)}
-            />
-            {!street && (
-              <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
-                This field is required
-              </p>
-            )}
-            <label
-              htmlFor=""
-              className="inline-block mt-2.5 text-sm font-medium"
-            >
-              Street Address
-            </label>
-          </div>
-        </div>
-        <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0 mt-4">
-          <div>
-            <input
-              className="border w-full p-3 focus:outline-none"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-            />
-            {!city && (
-              <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
-                This field is required
-              </p>
-            )}
-            <label
-              htmlFor=""
-              className="inline-block mt-2.5 text-sm font-medium"
-            >
-              City
-            </label>
-          </div>
-          <div>
-            <input
-              className="border w-full p-3 focus:outline-none"
-              value={state}
-              onChange={(e) => setState(e.target.value)}
-            />
-            {!state && (
-              <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
-                This field is required
-              </p>
-            )}
-            <label
-              htmlFor=""
-              className="inline-block mt-2.5 text-sm font-medium"
-            >
-              State / Province / Region
-            </label>
-          </div>
-        </div>
-        <div className="grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0 mt-4">
-          <div>
-            <input
-              className="border w-full p-3 focus:outline-none"
-              value={zip}
-              onChange={(e) => setZip(e.target.value)}
-            />
-            {!zip && (
-              <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
-                This field is required
-              </p>
-            )}
-            <label
-              htmlFor=""
-              className="inline-block mt-2.5 text-sm font-medium"
-            >
-              ZIP / Postal Code
-            </label>
-          </div>
-          <div>
-            <input
-              className="border w-full p-3 focus:outline-none"
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
-            />
-            {!country && (
-              <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
-                This field is required
-              </p>
-            )}
-            <label
-              htmlFor=""
-              className="inline-block mt-2.5 text-sm font-medium"
-            >
-              Country
-            </label>
-          </div>
-        </div>
-      </div>
-      <div className="mt-10 grid sm:grid-cols-2 sm:gap-x-12 grid-cols-1 gap-y-4 sm:gap-y-0">
-        <div className="">
-          <h1 className="font-bold mb-4">
-            Birthday{" "}
-            <span className="font-bold text-primaryRed text-xl text-center inline-block">
-              *
-            </span>
-          </h1>
-          <div className="grid grid-cols-3 sm:gap-x-5 gap-x-4 gap-y-4 sm:gap-y-0 lg:w-1/2 md:w-2/3 w-3/4">
-            <div>
-              <input
-                className="border w-full p-3 focus:outline-none"
-                placeholder="DD"
-                value={day}
-                onChange={(e) => setDay(e.target.value)}
-              />
-              {!day && (
-                <p className="w-full p-2 mt-2 border border-primaryRed text-primaryRed font-semibold text-xs">
-                  This field is required
-                </p>
-              )}
-            </div>
-            <div>
-              <input
-                className="border w-full p-3 focus:outline-none"
-                placeholder="MM"
-                value={month}
-                onChange={(e) => setMonth(e.target.value)}
-              />
-              {!month && (
-                <p className="w-full p-2 mt-2 border border-primaryRed text-primaryRed font-semibold text-xs">
-                  This field is required
-                </p>
-              )}
-            </div>
-            <div>
-              <input
-                className="border w-full p-3 focus:outline-none"
-                placeholder="YYYY"
-                value={year}
-                onChange={(e) => setYear(e.target.value)}
-              />
-              {!year && (
-                <p className="w-full p-2 mt-2 border border-primaryRed text-primaryRed font-semibold text-xs">
-                  This field is required
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-        <div className="">
-          <h1 className="font-bold mb-4">
-            Instagram / Facebook{" "}
-            <span className="font-bold text-primaryRed text-xl text-center inline-block">
-              *
-            </span>
-          </h1>
-          <div className="grid grid-cols-1 sm:gap-x-12  gap-y-4 sm:gap-y-0">
-            <div>
-              <input
-                className="border w-full p-3 focus:outline-none"
-                value={socials}
-                onChange={(e) => setSocials(e.target.value)}
-              />
-              {!socials && (
-                <p className="w-full pl-4 py-3 mt-2 border border-primaryRed text-primaryRed font-semibold">
-                  This field is required
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="mt-4 flex space-x-4">
-        <button
-          className="bg-primaryRed text-white px-[30px] py-4 font-bold text-lg"
-          onClick={handleClick}
-        >
-          Next
-        </button>
-      </div>
+        </>
+      )}
+
+      <FormNavigationBar onNext={onNext} onPrev={onPrev} isLast={false} />
     </form>
   );
 };

@@ -1,0 +1,20 @@
+.article {
+    margin: 4rem;
+    line-height: 1.76rem;
+}
+
+@media only screen and (max-width: 640px) {
+    .article {
+        margin: 2rem;
+    }
+}
+
+.article ol {
+    list-style-type: decimal;
+    padding-left: 2rem;
+}
+
+.article ul {
+    list-style-type: circle;
+    padding-left: 2rem;
+}

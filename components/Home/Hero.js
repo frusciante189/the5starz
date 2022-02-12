@@ -1,8 +1,6 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
-import Image from "next/image";
-import Banner from "../../public/Assets/banner.jpg";
 
 const Hero = () => {
   const handleScroll = () => {
@@ -14,7 +12,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="lg:h-[830px] h-[550px] relative">
+    <div className="bg-banner bg-no-repeat lg:h-[830px] h-[550px] md:bg-center bg-cover bg-custom">
       <div className="lg:px-[70px] sm:px-12 px-5 h-full pb-10 md:pb-0 z-50">
         <div className="flex flex-col items-start sm:justify-center justify-end h-full">
           <h1 className="xl:text-[64px] xl:leading-[64px] lg:text-[52px] lg:leading-[52px] md:text-[44px] md:leading-[44px] sm:text-[30px] sm:leading-[30px] font-semibold text-[22px] leading-[22px]">
@@ -47,9 +45,6 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="absolute top-0 z-[-1] left-0">
-        <Image src={Banner} priority alt="hero banner" />
       </div>
     </div>
   );
