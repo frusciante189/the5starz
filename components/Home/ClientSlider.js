@@ -16,6 +16,7 @@ import Mayven from "../../public/Assets/slider/mayven.png";
 import Talip from "../../public/Assets/slider/talip.jpg";
 import Dafni from "../../public/Assets/slider/dafni.jpg";
 import Sebo from "../../public/Assets/slider/sebo.jpg";
+import Goorin from "../../public/Assets/slider/goorin.png";
 import Image from "next/image";
 
 const ClientSlider = () => {
@@ -113,6 +114,17 @@ const ClientSlider = () => {
           <div className="pl-2 pb-2">
             <Image
               src={Beards}
+              width={182}
+              height={92}
+              objectFit="fill"
+              alt="product"
+              loading="lazy"
+              quality={50}
+            />
+          </div>
+          <div className="pl-2 pb-2">
+            <Image
+              src={Goorin}
               width={182}
               height={92}
               objectFit="fill"

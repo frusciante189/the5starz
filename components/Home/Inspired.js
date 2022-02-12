@@ -115,7 +115,10 @@ const Inspired = () => {
   return (
     <section className="bg-[#D6D4D5]">
       <div className="lg:px-[70px] sm:px-12 p-5 sm:py-7 md:py-10 lg:py-12 xl:py-16">
-        <h1 className="text-center text-[28px] leading-[28px]">Get inspired</h1>
+        <h1 className="text-[28px] leading-[28px] lg:text-[34px] lg:leading-[34px] xl:text-[42px] xl:leading-[42px] text-primaryRed text-center font-bold">
+          Get inspired
+        </h1>
+        <div className="bg-primaryRed h-1.5 w-1/6 lg:w-[7%] rounded-full lg:mt-5 mt-3 mx-auto"></div>
       </div>
       <div className="mt-10 lg:px-20 md:px-12 px-6 lg:columns-4 columns-2 break-before-avoid gap-x-6 gap-y-10 relative">
         {data.map((item, index) => {

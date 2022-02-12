@@ -108,6 +108,32 @@ const Client = () => {
                 <>
                   <Disclosure.Button className="flex justify-between items-center w-full px-5 py-[15px] text-sm font-medium text-left bg-[#EFEFEF] focus:outline-none">
                     <span className="font-bold text-lg leading-[18px]">
+                      Why don't the contributors upload the visual content to
+                      their social pages?
+                    </span>
+                    <PlusCircleIcon className={`w-6 h-6`} />
+                  </Disclosure.Button>
+                  <Transition
+                    enter="transition duration-500 ease-out"
+                    enterFrom="transform scale-95 opacity-100"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-200 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  >
+                    <Disclosure.Panel className="px-4 pt-4 pb-2 bg-[#F7F6F6] text-lg leading-[30px]">
+                      Because that automatically makes them influencers and we
+                      know that influencers are less trusted than real people.
+                      Also, don't want real people using their feed for
+                      advertising.
+                    </Disclosure.Panel>
+                  </Transition>
+                </>
+              </Disclosure>
+              <Disclosure as="div" className="mt-2">
+                <>
+                  <Disclosure.Button className="flex justify-between items-center w-full px-5 py-[15px] text-sm font-medium text-left bg-[#EFEFEF] focus:outline-none">
+                    <span className="font-bold text-lg leading-[18px]">
                       What happens if a review isn’t positive?
                     </span>
                     <PlusCircleIcon className={`w-6 h-6`} />
